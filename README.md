@@ -33,17 +33,17 @@ Največ 4.000 znakov vključno s presledki
 Predstavitev raziskovalnega projekta lahko napišete v prostem besedilu z uporabo tabel in grafično-vizualnih elementov po lastni presoji. Predstavitev pripnete v obliki datoteke v formatu pdf. Dolžino posameznih elementov prilagajate po lastni presoji, glede na pomen, ki ga pripisujete posameznemu elementu. Največ 15 strani formata A4 za posamezno jezikovno različico.
 
 Nujni elementi predstavitve raziskovalnega projekta so:
-27.1. Znanstvena izhodišča ter predstavitev problema in ciljev raziskav
-27.2. Pregled in analiza dosedanjih raziskav in relevantne literature
-27.3. Podroben opis vsebine in programa dela raziskovalnega projekta
-27.4. Razpoložljiva raziskovalna oprema (nad 5.000 €) potrebna za izvedbo projekta
+27.1. Znanstvena izhodišča ter predstavitev problema in ciljev raziskav \
+27.2. Pregled in analiza dosedanjih raziskav in relevantne literature \
+27.3. Podroben opis vsebine in programa dela raziskovalnega projekta \
+27.4. Razpoložljiva raziskovalna oprema (nad 5.000 €) potrebna za izvedbo projekta \
 27.5. Upravljane projekta: podroben načrt uresničevanja in časovna razporeditev
 
 Description must include:
-27.1. Scientific background, problem identification and objective of the proposed research
-27.2. State-of-the-art in the proposed field of research and survey of the relevant literature
-27.3. Detailed description of the work programme
-27.4. Available research equipment over 5.000 €
+27.1. Scientific background, problem identification and objective of the proposed research\
+27.2. State-of-the-art in the proposed field of research and survey of the relevant literature\
+27.3. Detailed description of the work programme\
+27.4. Available research equipment over 5.000 €\
 27.5. Project management: Detailed implementation plan and timetable
 
 ##### Pomen za razvoj znanosti oziroma stroke (Relevance to the development of science or a scientific field)
