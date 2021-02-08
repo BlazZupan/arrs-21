@@ -8,20 +8,20 @@ Computational Toolbox for Discovery of Prognostic Biomarkers for Survival Analys
 Računska orodja za odkrivanje prognostičnih markerjev v analizi preživetja
 
 #### Uporabniki/sofinancerji (Beneficiary/Co-funding organisation)
-Naziv, naslov in pooblaščeni predstavnik sofinancerja: Genialis d.o.o., Vojkova cesta 63, 1000 Ljubljana, Horaček Kokošar Katarina
-Matična številka: 6323430000
+Naziv, naslov in pooblaščeni predstavnik sofinancerja: Genialis d.o.o., Vojkova cesta 63, 1000 Ljubljana, Horaček Kokošar Katarina\
+Matična številka: 6323430000\
 Delež sofinanciranja: 25%
 
 #### Ključne besede (Key words)
-xxx
-xxx
+biomarkers, survival analysis, gene expression, interactive visualisations, explorative data analysis \
+biomarkerji, analiza preživetja, genski izrazi, interaktivne vizualizacije, raziskovalna analiza podatkov
 
 #### Ostale odprte zadeve
 
 ##### Kratka predstavitev vodje raziskovalnega projekta - življenjepis (Short Curriculum Vitae of the project leader)
 V alineah izpostaviti: izobrazbo, akademski ter znanstvenoraziskovalni naziv, zaposlitve, vodstvene funkcije in sposobnosti, sposobnosti vodje projekta za spodbujanje mladih raziskovalcev k vrhunskemu raziskovalnemu delu, delo v strokovnih komisijah doma in v tujini, nagrade ter jedrnat opis trenutnih oziroma zadnjih raziskovalnih projektov. Obseg: največ 12.000 znakov vključno s presledki (približno tri strani, velikosti pisave 11)
 
-##### Točko se izpolni samo v primeru prijave aplikativnega in podoktorskega aplikativnega projekta: dva do pet najpomembnejših dosežkov vodje raziskovalnega projekta in ostalih članov projektne skupine na področju gospodarstva, družbenih ali kulturnih dejavnosti, povezanih z raziskovalnim področjem prijave in vsebino projekta v zadnjih desetih letih (2011 - datum zaključka javnega razpisa). (For Applied Project and Postdoctoral Applied Project only: two to five most important achievements of the project leader and other project team members linked to the research field and the content of the research project in the area of economic, social and cultural activities in the last ten years (2011 - Conclusion of the public call).
+##### Dva do pet najpomembnejših dosežkov vodje raziskovalnega projekta in ostalih članov projektne skupine na področju gospodarstva, družbenih ali kulturnih dejavnosti, povezanih z raziskovalnim področjem prijave in vsebino projekta v zadnjih desetih letih (2011 - datum zaključka javnega razpisa). (Two to five most important achievements of the project leader and other project team members linked to the research field and the content of the research project in the area of economic, social and cultural activities in the last ten years (2011 - Conclusion of the public call).
 Točko se izpolnjuje samo v primeru prijave aplikativnega in podoktorskega aplikativnega projekta. Dosežek na področju gospodarstva, družbenih in kulturnih dejavnosti vpišete tako, da izpolnite COBISS kodo dosežka - sistem nato sam izpolni naslov objave in druge ustrezne vrednosti.
 
 ##### Seznam raziskovalnih projektov, ki so jih vodja in člani projektne skupine uspešno zaključili v zadnjih petih letih (2016 - datum zaključka javnega razpisa) in število uspešno zaključenih mentorstev MR (vodje in članov projektne skupine) v zadnjih petih letih (2016 - datum zaključka javnega razpisa). (The list of successfully finished research projects by project leader and members of the project team in the last five years (2016 - Conclusion of the public call) and number of successful mentorships by project leader and members of the project team in the last five years (2016 - Conclusion of the public call))
