@@ -4,8 +4,8 @@
 aplikativni – manjši (Small Applied Project) - 100.000 EUR
 
 #### Naslov raziskovalnega projekta (Title of the research project)
-Computational Toolbox for Discovery of Prognostic Biomarkers for Survival Analysis
-xxx
+Computational Toolbox for Discovery of Prognostic Biomarkers for Survival Analysis \
+Računska orodja za odkrivanje prognostičnih markerjev v analizi preživetja
 
 #### Uporabniki/sofinancerji (Beneficiary/Co-funding organisation)
 Naziv, naslov in pooblaščeni predstavnik sofinancerja: Genialis d.o.o., Vojkova cesta 63, 1000 Ljubljana, Horaček Kokošar Katarina
