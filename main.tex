@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=2cm,left=2cm,right=2cm,footskip=0.75in]{geometry}
 \usepackage{graphicx}
+\usepackage{floatrow}
 \usepackage{amsmath,amssymb}
 \usepackage{url}
 \usepackage[utf8x]{inputenc}
@@ -24,14 +25,15 @@
 %     ItalicFont    =calibrii.ttf]{calibri.ttf}
 
 \renewcommand{\bold}{\textbf}
+\graphicspath{ {./images/} }
 
 \begin{document}
 
-\title{Computational Toolbox for Discovery of Prognostic Markers in Survival Analysis from Gene Expression Data: \\
-Description of the Research Project}
+\title{\large Computational Toolbox for Discovery of Prognostic Markers in Survival Analysis from Gene Expression Data: Description of the Research Project}
 \author{}
 \date{}
 \maketitle
+\vspace*{-1cm}
 
 We propose a project to design and develop an interactive, visualization-based exploratory analysis toolbox to assist in finding molecular prognostic biomarkers from high-throughput biomedical survival data. The project will devise computational and machine learning methods to search for biomarkers, encapsulate them within interactive components with graphical user interface, and provide visual programming to stitch these components into data analysis pipeline. The constructed methods and toolbox will support collaborations between the data scientists and domain experts – physicians, biomedical or pharma researchers – to sip through the molecular cell-response data of thousands of genes to find those that most influence the survival. The proposed tool will access existing models, ontologies, and knowledge bases to speed-up the analysis process and provide automatic explanations of results. 
 
@@ -45,27 +47,29 @@ This is an applied project where we are teaming up with Genialis, a data science
 
 \bold{The project will contribute new methods and practical data exploration approaches to the field of survival analysis and study how covariates jointly affect the changes in the survival functions.} Survival analysis is a set of statistical methods aimed at determining the life expectancy of the investigated population. Survival analysis studies the expected duration of time until an event, say, a cancer relapse after chemotherapy, or a recurrence of disease~\cite{pazdur2008endpoints}. Survival models, including the most famous one, the proportional hazards model, relate the time until the event to one or more covariates. In biomedicine, the covariates with a significant impact on survival are potential {\em markers}, a characteristic of a biological system we can objectively measure and use as an indicator of the system's state. For example, in cancer, markers may differentiate between patients that respond to treatment and those where the treatment has no effect. 
 
-\bold{ Based on markers, we can predict the success of treatment and choose the right therapy for individual patient. Identification of good markers is thus essentials for advancements of medicine and treatment of diseases, and crucial to development of personalized medicine.} Because improving the survival is a direct benefit to the patient, it is very important to understand how participants respond to various forms of treatment. The treatment should thus be selected based on patient's state and characteristics, which are defined through a set of markers. Markers may be clinical, related to patient's symptoms, or biological, related to some measurements on molecular level, like concentration of specific protein or expression of particular gene or set of genes. Markers may refer to a single measurement of state, or to a group of measurements possibly related through a prognostic model or a network~\cite{Sonawane2019}.
+\bold{Based on markers, we can predict the success of treatment and choose the right therapy for individual patient. Identification of good markers is thus essentials for advancements of medicine and treatment of diseases, and crucial to development of personalized medicine.} Because improving the survival is a direct benefit to the patient, it is very important to understand how participants respond to various forms of treatment. The treatment should thus be selected based on patient's state and characteristics, which are defined through a set of markers. Markers may be clinical, related to patient's symptoms, or biological, related to some measurements on molecular level, like concentration of specific protein or expression of particular gene or set of genes. Markers may refer to a single measurement of state, or to a group of measurements possibly related through a prognostic model or a network~\cite{Sonawane2019}.
 
-\bold{ With high-throughput sequencing with which we can measure the degree of activity of gene in collection of cells or in specific tissue, a prominent set of biomarkers is related to gene expression.} The amount of mRNA in a biological sample that corresponds to a particular gene is correlated to gene's activity and is referred to as gene expression. High-throughput sequencing allows us to determine the expression of all genes in the organism, and hence provide a tool to assess the state of the biological system. A gene can be considered as a biomarker of survival if survival function is substantially different in subpopulation where gene is expressed to when it is not~\ref{fig:km-marker}. Note that this definition is vague, as it requires the threshold for gene expression, and quantification and a subsequent threshold for the difference between survival function. A validated and effective gene expression-based, biomarker discovery process can be an incredibly valuable and often necessary tool in drug discovery, development, and diagnostic research~\cite{MonforteMcPhail2005}. It has shaped the discovery of biomarkers in disease such as cancer~\cite{HENRY2012140}, XXX.
+\bold{With high-throughput sequencing with which we can measure the degree of activity of gene in collection of cells or in specific tissue, a prominent set of biomarkers is related to gene expression.} The amount of mRNA in a biological sample that corresponds to a particular gene is correlated to gene's activity and is referred to as gene expression. High-throughput sequencing allows us to determine the expression of all genes in the organism, and hence provide a tool to assess the state of the biological system. A gene can be considered as a biomarker of survival if survival function is substantially different in subpopulation where gene is expressed to when it is not~\ref{fig:km-marker}. Note that this definition is vague, as it requires the threshold for gene expression, and quantification and a subsequent threshold for the difference between survival function. A validated and effective gene expression-based, biomarker discovery process can be an incredibly valuable and often necessary tool in drug discovery, development, and diagnostic research~\cite{MonforteMcPhail2005}. It has shaped the discovery of biomarkers in disease such as cancer~\cite{HENRY2012140}, XXX.
 
 \begin{figure}
-\caption{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival. In panel a), the survival function is substantially higher for a group of patients with highly expressed gene XXX. The difference is not so evident in the panel b) and gene YYY. We could say that gene XXX is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes according to the degree of separation between corresponding survival signatures when a gene is expressed and not expressed.}
+\includegraphics[width=0.48\textwidth]{hsa-mir-149}\hfill
+\includegraphics[width=0.48\textwidth]{hsa-mir-496}
+\caption{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival. In panel a), the survival function is substantially higher for a group of patients with highly expressed microRNA hsa-mir-149. The difference is not so evident in the panel b) and microRNA hsa-mir-496. We could say that hsa-mir-149 is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes and RNA molecules according to the degree of separation between corresponding survival signatures when a gene is expressed and not expressed.}
 \label{fig:km-marker}
 \end{figure}
 
-\bold{ Ideally, therefore, data-driven discovery of new biomarkers would only require survival data with gene expression profiles of target tissues for patients or cell cultures with variety of outcomes and treatments.} The discovery algorithms would then sip through all the genes and find those that best define groups with different survival function. But there are many difficulties and obstacles in this procedure, related to noisy data, small datasets in terms of the number of investigated samples, higher-order gene interactions, and inclusion of available additional knowledge. We examine these more closely next.
+\bold{Ideally, therefore, data-driven discovery of new biomarkers would only require survival data with gene expression profiles of target tissues for patients or cell cultures with variety of outcomes and treatments.} The discovery algorithms would then sip through all the genes and find those that best define groups with different survival function. But there are many difficulties and obstacles in this procedure, related to noisy data, small datasets in terms of the number of investigated samples, higher-order gene interactions, and inclusion of available additional knowledge. We examine these more closely next.
 
 \subsubsection*{Problem Description}
 
-\bold{ There are three category of problems and challenges we would like to address in the proposed project, affecting the computation methods to infer potential biomarkers, approaches to data fusion, and implementation aspects:}
+\bold{There are three category of problems and challenges we would like to address in the proposed project, affecting the computation methods to infer potential biomarkers, approaches to data fusion, and implementation aspects:}
 \begin{description}
 	\item[Computational challenges, noise and overfitting.] The experimental data that addresses a specific survival problem, related to, say, impact of a new treatment or drug, is often expensive and hence small in sample size due. Experimental noise related to sample collection and treatment, and to measurement of gene expression can be high. This setting can lead to false discoveries and overfitting. The problem is especially exposed when finding sets, or networks of genes that could serve as biomarkers, as the number of candidates (different sets of genes) grows exponentially with the desired size of the gene set. For instance, with $20.000$ genes, there are over $1,3$ trillion possible gene triples; even if we would computationally manage to examine them all, checking so many combinations will necessary lead to overfitting, where our results would apply well to the training data, but not generalize well to new cases. Besides noise and overfitting, computational challenges include those in finding gene expression thresholds (when is a gene expressed?) and aggregation functions (when is a set of genes collectively active?).
 	\item[Inclusion ob background knowledge.] Genes participate in molecular pathways, perform functions, and are associated to diseases and responses to chemicals and drugs. Knowledge about these and other gene annotations is stored in data bases such as GeneOntology~\cite{}, KEGG~\cite{}, PathwayCommons~\cite{}, CellMarker~\cite{}, and other. Examining gene sets as candidates for biomarkers could and should use these valuable sources of information, both for restricting the biomarker search space and interpreting the sets of best candidate genes. Such fusion of data and knowledge bases has been at culprit of bioinformatics research~\cite{} but has been insufficiently explored in our target domain of survival biomarker discovery.
 	\item[Data exploration interface.] The past two decades have seen an emergence of a wide array of methods and statistical and machine learning tools to analyze high-throughput data from molecular biology. For survival analysis, however, there is no elegant toolbox with an intuitive user interface that would assist in biomarker discovery, support on-the-fly interactive exploratory data analysis, and offer easy construction of analytical pipelines. Available are excellent code libraries for survival analysis in R and Python, yet, for a systematic use, these are just building blocks whose joint utility and integration requires advanced knowledge of programming. What we need instead are intuitive tools with flexible and exciting interactive interfaces to engage the end-users and data scientists in productive communication, data exploration and modeling.
 \end{description}
 
-\bold{ In the project, we will address these three challenges through development of techniques and tools that will support interactive search for and exploration of potential biomarkers.} We aim to democratize the field of data-driven biomarker discovery by creating a versatile tool with interactive interface for intelligent analysis of survival data.
+\bold{In the project, we will address these three challenges through development of techniques and tools that will support interactive search for and exploration of potential biomarkers.} We aim to democratize the field of data-driven biomarker discovery by creating a versatile tool with interactive interface for intelligent analysis of survival data.
 
 \subsubsection*{Project Aims}
 
@@ -121,7 +125,28 @@ The project will be organized around a following set of tasks:
 
 \subsubsection{Research Design and Methods}
 \begin{description}
-	\item[Overview.] Text here.
+	\item[Overview.] 
+The overview of the research in the proposed project is presented in Figure~\ref{fig:approach}. The figure shows how we will integrate existing and new experimental data on genetic interactions, whole genome gene expression data sets, and data on cytotoxicity to find:
+1. which genes are functionally related to a particular drug, or to a class of drugs with common characterization,
+2. what is the mechanism through which a set of drugs causes cytotoxic effects,
+3. which other experiments could further improve the reliability of the inferred hypothesis on drug action.
+While all of the above are clearly the issues to be addressed by a biomedical engineer, due to sheer volume of data and additional information in available data and knowledge they can only be addressed through means of computational analysis and discovery approaches. The principal challenge of the project is how to combine these different sources, and use modern data mining approaches to support knowledge discovery to provide interpretable and operational hypotheses to biomedical researchers and drug developers. In the description below, we first describe the data on which our drug characterization and discovery process will be based, then enlist a set of computational approaches which we will develop and use, comment on their implementation within an existing visual programming-based data mining framework, and integration in robotic experimental chemical genomics platform.
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
+capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+{\caption{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival. In panel a), the survival function is substantially higher for a group of patients with highly expressed microRNA hsa-mir-149. The difference is not so evident in the panel b) and microRNA hsa-mir-496. We could say that hsa-mir-149 is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes and RNA molecules according to the degree of separation between corresponding survival signatures when a gene is expressed and not expressed.}\label{fig:test}}
+{\includegraphics[width=0.6\textwidth]{approach}}
+\end{figure}
+
+
+% \begin{figure}
+% \includegraphics[width=0.48\textwidth]{approach}
+% \caption{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival. In panel a), the survival function is substantially higher for a group of patients with highly expressed microRNA hsa-mir-149. The difference is not so evident in the panel b) and microRNA hsa-mir-496. We could say that hsa-mir-149 is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes and RNA molecules according to the degree of separation between corresponding survival signatures when a gene is expressed and not expressed.}
+% \label{fig:approach}
+% \end{figure}
+
+
 	\item[Material and Data Sets.] Text here.
 	\item[Computational Approaches, Data Mining and Bioinformatics.] Text here.
 	\item[Software Implementation.] Text here.
