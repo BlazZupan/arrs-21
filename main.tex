@@ -15,6 +15,9 @@
 % \setlength{\topmargin}{0in}
 % \setlength{\textheight}{8.5in}
 
+\usepackage{caption}
+\captionsetup[figure]{labelfont={bf},name={Fig.},labelsep=period}
+
 \usepackage{fontspec}
 \setmainfont{Calibri}
 
@@ -35,9 +38,10 @@
 \maketitle
 \vspace*{-1cm}
 
-We propose a project to design and develop an interactive, visualization-based exploratory analysis toolbox to assist in finding molecular prognostic biomarkers from high-throughput biomedical survival data. The project will devise computational and machine learning methods to search for biomarkers, encapsulate them within interactive components with graphical user interface, and provide visual programming to stitch these components into data analysis pipeline. The constructed methods and toolbox will support collaborations between the data scientists and domain experts – physicians, biomedical or pharma researchers – to sip through the molecular cell-response data of thousands of genes to find those that most influence the survival. The proposed tool will access existing models, ontologies, and knowledge bases to speed-up the analysis process and provide automatic explanations of results. 
+\bold{We propose a project to design and develop an interactive, visualization-based exploratory analysis toolbox to assist in finding molecular prognostic biomarkers from high-throughput biomedical survival data.} The project will devise computational and machine learning methods to search for biomarkers, encapsulate them within interactive components with graphical user interface, and provide visual programming to stitch these components into data analysis pipeline. The constructed methods and toolbox will support collaborations between the data scientists and domain experts – physicians, biomedical or pharma researchers – to sip through the molecular cell-response data of thousands of genes to find those that most influence the survival. The proposed tool will access existing models, ontologies, and knowledge bases to speed-up the analysis process and provide automatic explanations of results. 
 
-This is an applied project where we are teaming up with Genialis, a data science company specializing in computational support for precision medicine. The proposed set of methods, tools, and experience gained through the project will help Genialis obtain a cutting-edge in the biomarker discovery field, improve communication of their data analysis results to their customers, and increase their competitiveness. It will allow us, the proposing institution, to further advance our research in combination of interactive visualizations and machine learning, and apply our new approaches to a challenging field of biomarker discovery.
+
+\bold{The proposed set of methods, tools, and experience gained through the project will help Genialis, a participating SME, to obtain a cutting-edge in the biomarker discovery field, improve communication of their data analysis results to their customers, and increase their competitiveness.} Genialis is a data science company specializing in computational support for precision medicine, the field driven by identification and use of prognostic markers. In collaboration with Genialis, the project combines both strong scientific goals, is ambitious in software engineering tasks, and will have a strong practical component. The project will allow us, the proposing institution, to further advance our research in combination of interactive visualizations and machine learning, and apply our new approaches to a challenging field of biomarker discovery.
 
 \subsection{Scientific background, problem identification and objectives of the proposed research}
 
@@ -73,18 +77,18 @@ This is an applied project where we are teaming up with Genialis, a data science
 
 \subsubsection*{Project Aims}
 
-{\ bf The project will develop and apply a set of computational tools for inference of biomarkers from survival data.} We will integrate existing approaches to survival data-based biomarker scoring, survival modeling, and gene set enrichment analysis, and propose new techniques for survival-specific gene interactions, construction of biomarker candidate maps, and interpretation of constructed visualizations. We will devise means for heuristic search that will use published data bases on gene function and pathway annotation.
+\bold{The project will develop and apply a set of computational tools for inference of biomarkers from survival data.} We will integrate existing approaches to survival data-based biomarker scoring, survival modeling, and gene set enrichment analysis, and propose new techniques for survival-specific gene interactions, construction of biomarker candidate maps, and interpretation of constructed visualizations. We will devise means for heuristic search that will use published data bases on gene function and pathway annotation.
 
-{\em The project will address the means by which domain experts and data miners use these tools in real-life applications.} The project will embed computation methods in components with graphical user interfaces. We will enhance our own, open-source data mining platform Orange~\footnote{\url{http://orangedatamining.com}} with survival analysis capabilities. We will show that the resulting visual programming platform not only substantially reduces the complexity and user time spent on data analysis, but also enhances the collaboration and motivation of domain experts through informative visualizations and ability to steer the discovery process using domain knowledge. 
+\bold{The project will address the means by which domain experts and data miners use these tools in real-life applications.} The project will embed computation methods in components with graphical user interfaces. We will enhance our own, open-source data mining platform Orange~\footnote{\url{http://orangedatamining.com}} with survival analysis capabilities. We will show that the resulting visual programming platform not only substantially reduces the complexity and user time spent on data analysis, but also enhances the collaboration and motivation of domain experts through informative visualizations and ability to steer the discovery process using domain knowledge. 
 
-{\em Finally, we would like to showcase the utility of the constructed toolbox.} In the application of project's approaches we will use a set of published and privately-owned (from participating SME) datasets on drug response and cancer. The success of the project will be judged on use cases carried out by participating SME, and our ability to train them to independently use the results of the project.
+\bold{Finally, we would like to showcase the utility of the constructed toolbox.} In the application of project's approaches we will use a set of published and privately-owned (from participating SME) datasets on drug response and cancer. The success of the project will be judged on use cases carried out by participating SME, and our ability to train them to independently use the results of the project.
 
 \subsubsection*{Anticipated Results}
 The expected principal results of this project are:
 \begin{enumerate}
-	\item bioinformatics library to support biomarker discovery from survival data. The library will be developed in Python and will be published in open-source on GitHub, together with documentation, unit-tests, and working examples;
-	\item a biomarker discovery toolbox featuring visual programming interface, interactive visualizations, and means of interpretation and explanation of results. The toolbox will support integration of external knowledge-bases, on-the-fly construction of analytical pipelines, and domain knowledge-based guided data exploration;
-	\item a set of use-cases developed in close collaboration with Genialis, an participating SME. The use-cases will demonstrate the applicability of our software, showcase the power of toolbox's intuitive interface, and provide for instruction and educational material in dissemination of project's results.
+	\item \bold{A bioinformatics library for biomarker discovery from survival data}. The library will be developed in Python and will be published in open-source on GitHub, together with documentation, unit-tests, and working examples;
+	\item \bold{A biomarker discovery toolbox featuring visual programming interface, interactive visualizations, and interpretation and explanation of results}. The toolbox will support integration of external knowledge-bases, on-the-fly construction of analytical pipelines, and domain knowledge-based guided data exploration;
+	\item \bold{A set of use-cases developed in close collaboration with Genialis d.o.o.}, a participating SME. The use-cases will demonstrate the applicability of our software, showcase the power of toolbox's intuitive interface, and provide for instruction and educational material in dissemination of project's results.
 \end{enumerate}
 
 \subsubsection*{Preliminary Results and Studies}
