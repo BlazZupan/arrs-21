@@ -107,7 +107,7 @@ capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 \subsubsection*{Pričakovani rezultati}
 Najpomembnejši pričakovani rezultati tega projekta so:
 \begin{enumerate}
-	\item \bold{XXXXXXXXXXXXX New methods and approaches for biomarker discovery}, including computational approaches for survival-based biomarker interaction analysis, visualization approaches to map the space of potential biomarkers, and improved heuristic search for groups of biomarkers through the integration of data and knowledge-bases. XXXXXXXXXXXX
+	\item \bold{XXXXXXXXXXXXX Novi pristopi za odkrivanje biomarkerjev methods and approaches for biomarker discovery}, including computational approaches for survival-based biomarker interaction analysis, visualization approaches to map the space of potential biomarkers, and improved heuristic search for groups of biomarkers through the integration of data and knowledge-bases. XXXXXXXXXXXX
 	\item \bold{Knjižnica računalniške kode z metodami za odkrivanje biomarkerjev iz podatkov o preživetju in genskem izražanju.} Knjižnica bo razvita v jeziku Python in bo objavljena v odprtokodni različici na GitHub skupaj z dokumentacijo, testi in primeri uporabe.
 	\item \bold{Nabor orodij za odkrivanje biomarkerjev z vmesnikom za vizualno programiranje, interaktivnimi vizualizacijami in razlago rezultatov.} Nabor orodij bomo združili z javnimi podatkovnimi bazami in tako omogočili gradnjo analitičnih cevovodov v realnem času, in interaktivno vizualizacijo podatkov in modelov (glej sliko~\ref{fig:orange-interactivity}), podprto z domenskim znanjem.
 	\item \bold{Nabor primerov uporabe, razvit v tesnem sodelovanju z Genialis.} Primeri uporabe bodo prikazali uporabnost naše programske opreme, moč intuitivnega grafičnega vmesnika in zagotoviti učno gradivo za razširjanje rezultatov projekta.
@@ -170,19 +170,18 @@ capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 
 \subsubsection{Research Design and Methods}
 \begin{description}
-	\item[Overview.]
-The overview of the research in the proposed project is presented in Fig.~\ref{fig:approach}. The figure shows how we will integrate the target gene expression data and clinical metadata with additional knowledge bases and other available data sets. It exposes the key scientific approaches we will address:
+	\item[Pregled.] Pregled dela v predlaganem projektu je predstavljen na sliki~\ref{fig:approach}. Slika prikazuje, kako bomo povezali podatke o genskega izražanja in klinične metapodatke z dodatnimi podatkovnimi bazami. Ugotovili bomo
 \begin{enumerate}
-\item which, on their own, are the key molecular markers for survival,
-\item which are the combinations of molecular entities (gene sets) that jointly correlate with survival,
-\item which characteristics of marker genes can help us interpret the results of the analysis.
+\item kateri geni so sami po sebi ključni molekularni markerji preživetja,
+\item katere kombinacije genov (genski sklopi) so povezane s preživetjem,
+\item katere značilnosti markerskih genov nam lahko pomagajo pri interpretaciji rezultatov.
 \end{enumerate}
-While all of the above are clearly the issues that could be individually and manually addressed by a molecular biologist, due to the sheer volume of data and additional information in available data and knowledge bases they can only be tackled through means of computational analysis and data-driven approaches. The principal challenge of the project is how to combine these different sources, and use modern data mining approaches to support knowledge discovery to provide interpretable and operational hypotheses to biomedical researchers and drug developers. In the description below, we first list the data sources on which we will apply our marker discovery process, then list a set of computational approaches which we will develop and use, and comment on the feasibility of their implementation within the existing visual programming-based data mining framework.
+Čeprav bi zgoraj našteta vprašanja lahko individualno in ročno naslovil molekularni biolog, pa jih je v praktičnem smislu mogoče rešiti le s pomočjo računske analize in vključevanjem velikega števila podatkov iz različnih javnih zbirk. Glavni izziv projekta je torej, kako te različne vire združiti in uporabiti sodobne pristope rudarjenja podatkov za predlaganje novih hipotez. V spodnjem opisu najprej navedemo vire podatkov, na katerih bomo uporabili postopek odkrivanja biomarkerjev, nato pa nabor računskih pristopov, ki jih bomo razvili in uporabili, ter komentiramo izvedljivost njihove implementacije znotraj obstoječe platforme za vizualno programiranje Orange.
 
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
 capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
-{\caption{\small\bold{Knowledge-based analysis to biomarker discovery.} We aim to combine our target data set with transcription and survival data from clinical trials with other available data sets and knowledge bases to gain in speed, accuracy and interpretation of results. Substantial part of our project deals with exploratory data interfaces, which combine visualization of data, identified biomarkers and models. Together, computational approaches for biomarker discovery and visualization approaches for making these findings explicit and placing them in the context of entire search space (e.g., {\em marker maps}) will assist us in explainable, semi-automatic discovery process. The methods will provide hypotheses to be evaluated by a domain expert, and they will be able to work with the assumptions and curated public knowledge rather than machine-generated black-box decisions.}
+{\caption{\small\bold{Od podatkov do odkritja biomarkerja.} Naš cilj je združiti podatkovni sete s podatki genskem izražanju in kliničnem preživetju z drugimi razpoložljivimi nabori podatkov. Tako bomo pridobili na hitrosti, natančnosti in razlagi rezultatov. Znaten del našega projekta se ukvarja z razvojem grafičnih vmesnikov, ki združujejo vizualizacijo podatkov, biomarkerjev in modelov. Računski in vizualizacijski pristopi bodo postavili rezultate v kontekst celotnega iskalnega prostora (npr. interakcijski zemljevidi) in nam bodo v pomoč pri polavtomatskem procesu odkrivanja novih biomarkerjev. Metode bodo tako podale hipoteze, ki jih bo ocenil domenski strokovnjak, v pomoč pa mu bodo agregirani podatki iz različnih podatkovnih zbirk.}
 \label{fig:approach}}
 {\includegraphics[width=0.6\textwidth]{approach}}
 \end{figure}
@@ -195,62 +194,63 @@ capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 % \end{figure}
 
 
-	\item[Material and Data Sets.] Four types of data sets will be gathered, organized and used in the project:
+	\item[Podatki.] V projektu bodo zbrane, organizirane in uporabljeni štirje viri podatkov o genskih ekspresijah in preživetju:
 	\begin{description}
-		\item[DS1] Transcription data from The Cancer Genome Atlas database\myurl{https://www.cancer.gov/tcga}~\cite{24071849} and Gene Expression Omnibus\myurl{https://www.ncbi.nlm.nih.gov/geo/}~\cite{23193258}.
-		\item[DS2] Survival analysis data from clinical trials from The Cancer Genome Atlas database.
-		\item[DS3] Transcription and clinical trial data managed by Genialis.
-		\item[DS4] Simulated data sets.
+		\item[DS1] Podatki iz baze podatkov The Cancer Genome Atlas\myurl{https://www.cancer.gov/tcga}~\cite{24071849} in Gene Expression Omnibus\myurl{https://www.ncbi.nlm.nih.gov/geo/}~\cite{23193258}.
+		\item[DS2] Podatki o analizi preživetja iz kliničnih raziskav iz baze podatkov The Cancer Genome Atlas database.
+		\item[DS3] Zasebni podatki o transkripciji in kliničnih preskušanjih, ki jih upravlja Genialis.
+		\item[DS4] Simulirani nabori podatkov.
 	\end{description}
-	The data from DS1 and DS2 are fragmented; datasets have to be integrated, so that the clinical trial data is aligned with a corresponding transcription data. Methodological reports on development of computational techniques, including those we have cited in the related work, would refer to data repositories but would seldom publish the reorganized data ready to be used in off-the-shelf software packages. Our project aims to break with this practice and compile a data repository with aligned clinical and transcription data sets ready for benchmarking and comparing biomarker discovery techniques.
+	Podatki iz DS1 in DS2 so razdrobljeni; nabore podatkov je treba integrirati, tako da so podatki iz kliničnih raziskav poravnani z ustreznimi meta-podatki. Metodološka poročila o razvoju računskih tehnik, vključno s tistimi, ki smo jih navedli v pregledu literature, redko objavijo organizirane podatke, pripravljene za uporabo v prodajnih programskih paketih. Namen projekta je prekiniti s to prakso in sestaviti repozitorij podatkov z usklajenim kliničnim in transkripcijskim podatkovnim nizom, pripravljenem za primerjalno analizo in tehnike odkrivanja biomarkerjev.
 
-	Genialis d.o.o.~already has a collection of such align datasets which comes from their existing partnerships with some major pharmaceutical companies. The data is private, but will be shared with us in the project for testing and validation purposes.
+	Podjetje Genialis d.o.o. že ima zbirko tovrstnih podatkov, ki izhajajo iz njihovih obstoječih partnerstev z nekaterimi večjimi farmacevtskimi podjetji. Podatki so zasebni, vendar jih bodo v okviru projekta delili z nami za namene razvoja in testiranja.
 
-	We will also construct a set of simulated datasets, where variables representing biomarkers will be placed by design. The datasets will serve for testing and benchmarking of the proposed methods.
+	Izdelali bomo tudi nabor simuliranih podatkovnih nizov. Podatki bodo služili za testiranje in primerjalno analizo predlaganih metod.
 
-	The project will additionally use other sources of information, which, for the reasons of convenience, will be queried for information specific for the project and will internally be represented as additional data sets. These include, but are not limited to:
+	Projekt bo dodatno uporabil tudi druge vire informacij. Ti vključujejo, vendar niso omejeni na:
 
 	\begin{description}
-		\item[DS6] Gene function annotations from Gene Ontology (GO) consortium.\myurl{https://www.geneontology.org}
-		\item[DS7] Various pathways from KEGG, Kyoto Encyclopedia of Genes and Genomes.\myurl{https://www.genome.jp/kegg}
-		\item[DS8] NDEx pathway data base.\myurl{http://www.ndexbio.org/}
-		\item[DS9] Various marker gene data bases, including CellMarker\myurl{http://biocc.hrbmu.edu.cn/CellMarker}~\cite{cellmarker} and PanglaoDB
+		\item[DS6] Genske funkcije iz zbirke genskih ontologij konzorcija Gene Ontology (GO).\myurl{https://www.geneontology.org}
+		\item[DS7] Presnovne poti iz KEGG, Kjotske enciklopedije genomov in genov.\myurl{https://www.genome.jp/kegg}
+		\item[DS8] Podatkovna baza poti NDEx.\myurl{http://www.ndexbio.org/}
+		\item[DS9] Različne podatkovne baze markerskih genov, vključno s  CellMarker\myurl{http://biocc.hrbmu.edu.cn/CellMarker}~\cite{cellmarker} in PanglaoDB
 		\myurl{https://panglaodb.se}~\cite{30951143}.
 	\end{description}
 
-	\item[Computational Approaches, Data Mining and Bioinformatics.] Computational approaches and development of data mining methods will include:
+	\item[Računski pristopi, pridobivanje podatkov in bioinformatika] Računski pristopi in razvoj načinov podatkovnega rudarjenja bo vključeval:
 	\begin{description}
-		\item[Data organization (task T1).] The project will develop a computational platform with access to the common, server-based databases that will store transcriptome and survival data from third parties and participating SME Genialis. We will use standard software engineering practices to construct this architecture (data server with secure HTTP access, HTTP-based queries, components on clients to access the data). We will locally store the data from other information sources like gene ontologies and pathways to allow for fast computation and utility of such information, and for these reuse existing server and database architecture of Orange~\cite{Demsar2013,Curk2005,Godec2019}. Overall, the software engineering task here is to hide the details of data access and query from the user. Users should be able to access these functions with a single click and focus on data analysis and interpretation.
-		\item[Gene ranking (T2.1).] We will use the standard log-rank test to compare two or more survival curves and hence estimate a selection of gene and its expression threshold to break observed cases to subpopulation. The log-rank test will be used as a baseline. We will compare the inferred ranking of genes to modeling approaches, where we will infer survival models first, and then estimate the information value of its constituents (genes) either directly for linear models (e.g.~Cox proportional hazards models) or indirectly. Advanced models will include random survival forests~\cite{22088987} and deep learning~\cite{katzman2018deepsurv,ching2018cox}. Indirect measurements of contributions of individual features will include game theoretic approaches such as SHAP\myurl{https://github.com/slundberg/shap}~\cite{32607472}.
-		\item[Gene set enrichment analysis (part of T2.1).] We will use the gene set enrichment analysis~\cite{1239896} to interpret the results of the biomarker ranking and inspect commonalities of the best-ranked genes in terms of functions and pathways.
-		\item[Feature construction and gene set identification (task T2.2).] We will use direct and indirect feature selection techniques.  The quality of the set will be estimated through the predictive performance of the model. As an alternative approach, we will use model-based feature selection, like $\ell 1$ regularization of Cox and network models.
-		\item[Gene interaction analysis (T2.3)] will examine possible combinations of genes for their combined effect on the survival function. We plan to use model-based evaluation of gene pairs (T2.1) and represent results in interaction maps (T2.6) and networks.
-		\item[Knowledge-infused biomarker discovery (T2.4)] will limit the search for useful combinations of features in task T2.2 to genes with common functional or pathway labels, that is, preferably to those already associated with investigated pathology in the literature. The success of this approach will be measured through gains in algorithm speed and reduction of search space to be considered, while requesting identification of the gene sets of similar quality to those from exhaustive search.
-		\item[Deep learning (T2.5)] will employ variational autoencoders for embedding to represent marker candidates with latent vectors, that is, position them in the latent space where we can easily examine their relatedness and the structure of marker space. We will construct autoencoders from the gathered collection of transcription data and clinical data sets (task T1) and then use transfer learning~\cite{Godec2019} to adapt the model to a specific target dataset. The embedded representations of potential markers will provide the foundation to construct interpretable visualizations of the search space (e.g., task T2.6).
-		\item[Gene interactions maps (T2.6)] will render information from tasks T2.3 and T2.7 and provide means for graphical explanation and presentation of the search space, exploratory data analysis, and visual interpretation. To render gene maps we will use our own variant of t-SNE~\cite{vanDerMaaten2008} called openTSNE\myurl{https://github.com/pavlin-policar/openTSNE}~\cite{policar2019}, which can preserve global structure.
-		\item[Annotation of point-based visualizations] will equip gene maps (task T2.6) and other point-based visualizations of gene and marker search space with functional and pathway labels. We will use this approach to provide assisted interpretation of the search space. To develop this technique, we will extend our approach previously developed for single-cell gene expression analysis (see Fig.~\ref{fig:annotation}).
+		\item[Organizacija podatkov (naloga T1).] Projekt bo razvil računalniško platformo z dostopom do skupnih podatkovnih baz s strežniške zbirke, ki bodo hranile podatke o genskem izražanju in preživetju. Za to arhitekturo bomo uporabili običajne prakse programskega inženirstva (podatkovni strežnik z varnim dostopom HTTP, poizvedbe, ki temeljijo na HTTP, komponente na odjemalcih podatkov). Lokalno bomo shranili druge vire informacij, kot so genske ontologije in poti, da bodo te informacije hitro na voljo. Za njihovo ponovno uporabo bomo uporabili obstoječo arhitekturo Orange~\cite{Demsar2013,Curk2005,Godec2019}. Na splošno je cilj skriti kompleksnost dostopanja do podatkov pred uporabnikom. Uporabniki bi morali imeti možnost dostopanja do teh funkcij z enim samim klikom in se osredotočiti na analizo in interpretacijo podatkov.
+		\item[Razvrstitev genov (T2.1).] Za primerjavo dveh ali več krivulj preživetja bomo uporabili standardni log-rank test in tako ocenili informacijsko vrednost izbranih genovin prag njihovih ekspresije. Napredni modeli bodo vključevali naključne gozdove~\cite{22088987} in globoko učenje~\cite{katzman2018deepsurv,ching2018cox}. Posredne vrednosti prispevkov posameznih genov bomo določevali z metodami teorije iger, npr. SHAP\myurl{https://github.com/slundberg/shap}~\cite{32607472}.
+		\item[Analiza obogatitve genskega sklopa (del T2.1).] Za interpretacijo rezultatov razvrstitve biomarkerjev bomo uporabili analizo obogatitve genskega nabora~\cite{1239896} in pregledali skupne točke najbolje uvrščenih genov glede na funkcije in poti.
+		\item[Konstrukcija novih spremenljivk in identifikacija naborov genov (naloga T2.2).] Uporabili bomo neposreden in posreden izbor. Kakovost nabora gena bo ocenjena s pomočjo kvalitete napovedi preživetja. Kot alternativni pristop bomo uporabili izbiro lastnosti z modelom, kot je $\ell 1$ regularizacija Coxovih modelov in modelov omrežja.
+		\item[Analiza interakcije genov (T2.3)] bo preučila možne kombinacije genov na njihov skupni učinek na funkcijo preživetja. Nameravamo uporabiti modelno vrednotenje genskih parov (T2.1) in predstaviti rezultate v interakcijskih zemljevidih (T2.6) in omrežjih.
+		\item[Odkritje biomarkerja s pomočjo drugih podatkov (T2.4)] bo omejilo iskanje uporabnih kombinacij v nalogi T2.2 na gene s skupno biološko funkcijo, po možnosti na tiste, ki so že povezani s preučevano patologijo v literaturi. Uspeh tega pristopa se bo meril s povečanjem hitrosti algoritma in zmanjšanjem prostora za iskanje, ki ga je treba upoštevati, s tem da bomo zahtevali podobno kakovost rezultatov kot tistih iz izčrpnega iskanja.
+		\item[Globoko učenje (T2.5)] bo za vdelavo uporabljalo avtoenkoderje, ki bodo predstavljali kandidate za biomarkerje z vektorji v latentnem prostoru, kjer lahko enostavno pregledamo njihovo povezanost in strukturo prostora biomarkerjev. Iz zbirke transkripcijskih podatkov in naborov kliničnih podatkov (naloga T1) bomo izdelali avtokoderje in nato uporabili prenosno učenje~\cite{Godec2019} za prilagoditev modela določenemu ciljnemu naboru podatkov. Take predstavitve potencialnih markerjev bodo osnova za oblikovanje interpretativnih vizualizacij (npr. naloga T2.6).
+		\item[Zemljevidi o interakcijah genov (T2.6)] bodo podajali informacije iz nalog T2.3 in T2.7 z namenom vizualne interpretacije rezultatov. Za upodabljanje genskih zemljevidov bomo uporabili lastno različico t-SNE~\cite{vanDerMaaten2008}, imenovano openTSNE\myurl{https://github.com/pavlin-policar/openTSNE}~\cite{policar2019}, ki lahko ohrani globalno strukturo.
+		\item[Razlaga točkovnih vizualizacij] bo opremila genske zemljevide (naloga T2.6) in druge vizualizacije s funkcijskimi oznakami in oznakami presnovnih poti. Ta pristop bomo uporabili za pomoč pri interpretaciji iskalnega prostora. Da bi razvili to tehniko, bomo razširili naš pristop, ki smo ga prej razvili za analizo izražanja genov v posameznih celicah (glej sliko~\ref{fig:annotation}).
 	\end{description}
 
-	\item[Software Implementation.] Over the past two decades, we have been developing a comprehensive data analysis suite called Orange\myurl{https://orangedatamining.com}~\cite{Demsar2013,Curk2005,Godec2019}. Orange has been used by thousands of users and is a toolbox of choice in training of data science in hundreds of universities\myurl{https://orangedatamining.com/blog/2021/2021-01-11-orange-in-classroom/}. Orange features a scripting and a visual programming environment. Visual programming offers an intuitive means of combining known analysis and visualization methods into powerful applications. Orange includes a set of visual components for functional genomics (Fig.~\ref{fig:orange-interactivity}) that enable users who are not programmers to analyse transcriptomic data and to customize their analysis by combining common data analysis tools to fit their needs~\cite{Godec2019}. Orange framework will be used to implement methods proposed in this project and offer them to the community within an open-source model.
+	\item[Uporaba programske opreme.] V zadnjih dveh desetletjih smo razvijali obsežno analizo podatkov z imenom Orange\myurl{https://orangedatamining.com}~\cite{Demsar2013,Curk2005,Godec2019}. Orange uporablja tisoče uporabnikov po vsem svetu in je izbrano orodje pri izobraževanju podatkovnih znanosti na stotinah univerz\myurl{https://orangedatamining.com/blog/2021/2021-01-11-orange-in-classroom/}. Orange ima skriptni del in vizualno programsko okolje. Vizualno programiranje ponuja intuitivno sredstvo za kombiniranje orodij analiz in vizualizacij v zmogljive aplikacije. Orange vsebuje nabor vizualnih komponent za funkcijsko genomiko (slika~\ref{fig:orange-interactivity}), ki uporabnikom, ki niso programerji, omogoča analizo transkripcijskih podatkov in prilagoditev njihove analize s kombiniranjem običajnih orodij za analizo podatkov, ki ustrezajo njihovim potrebam~\cite{Godec2019}. Orodje Orange bomo uporabili za razvoj metod, ki jih predlagamo v projektu, in jih bomo delili z znanstveno skupnostjo znotraj odprtokodnega modela.
 
-	Within the project, we will develop a set of components that will be specific to the problem in our project, but also general enough for other survival analysis tasks. We intend to develop components for survival modeling, accuracy estimation, biomarker ranking, identification of groups of markers, gene embedding, and construction of survival-based gene interaction maps. Orange includes components crucial for the proposed project but have already been developed or at least prototyped. These include access to gene annotation libraries, gene set enrichment, GO browser, and visualization tools, including t-SNE and Kaplan-Meier curves.
+	V okviru projekta bomo razvili nabor komponent, ki bodo specifične za naš problem, hkrati pa dovolj splošne za druge naloge iz analize preživetja. Razviti želimo komponente za modeliranje preživetja, oceno natančnosti, razvrstitev biomarkerjev, identifikacijo skupin markerjev, vgradnjo (ang.~{\em embedding}) genov in izdelavo zemljevidov genskih interakcij na osnovi preživetja. Orange že vsebuje nekatere gradnike, ki so ključnega pomena za predlagani projekt. Te vključujejo dostop do knjižnic genskih pripisov, obogatitve genskega nabora, brskalnika GO in orodij za vizualizacijo, vključno z vizualizacijama t-SNE in krivulj Kaplan-Meier.
 
-	\item[Experimental Validation.] We will use the data sets DS1 to DS4 to experimentally validate both the computational techniques and the visual interfaces we will construct in the project. There are three aspects of validation we will assess:
+	\item[Eksperimentalna potrditev.] Podatke DS1 do DS4 bomo uporabili za eksperimentalno potrditev računskih tehnik in vizualnih vmesnikov. Ocenjevali bomo tri vidike:
 	\begin{itemize}
-		\item \bold{predictive performance}, where we will compare inferred biomarkers to those published in the literature, and compare the results of our marker discovery techniques to those already published;
-		\item \bold{interpretability}, which will be assessed with domain experts working with Genialis, a participating SME. The assessment of interpretability will be both quantitative, in terms of how well can we link identified biomarkers to known functional and pathway labels, and subjective, in terms of agreement of domain experts with the proposed result;
-		\item \bold{usability}, where we will use hands-on workshops with domain experts to assess if they can use the developed tool independently after a three-hour training.
+		\item \bold{napovedna uspešnost}, kjer bomo primerjali napovedi biomarkerjev z znanimi biomarkerji in primerjali rezultate naših tehnik odkrivanja markerjev z objavljenimi;
+		\item \bold{razumljivost}, ki jo bodo ocenili domenski eksperti, ki sodelujejo z Genialisom.
+Ocena razumljivosti bo kvantitativna glede na to, kako dobro lahko identificirane biomarkerje povezujemo z znanimi funkcionalnimi genskimi potmi, in subjektivna v smislu potrditve napovedanih genskih poti s strani domenskih ekspertov;
+		\item \bold{uporabnost}, kjer bomo z domenskimi eksperti na praktičnih delavnicah ocenili, ali lahko po triurnem treningu orodje uporabljajo samostojno.
 	\end{itemize}
 \end{description}
 
-\subsection{Available research equipment over 5.000 €}
+\subsection{Razpoložljiva raziskovalna oprema nad 5.000 €}
 
-Genialis, the participating SME, will provide a web resource Genialis Expressions (see Fig.~\ref{fig:genialis-expressions-frontend} and~\ref{fig:genialis-expressions-software-components}) to aggregate, curate, and analyze high-throughput sequencing data and associated clinical and experimental results. Genialis Expressions run on the AWS Kubernetes Cluster owned by Genialis.
+Genialis bo prispeval spletno orodje Genialis Expressions (glej sliki~\ref{fig:genialis-expressions-frontend} in~\ref{fig:genialis-expressions-software-components}) za agregacijo, pregledovanje in analizo podatkov genskih zaporedij ter kliničnih in eksperimentalnih podatkov. Orodje Genialis Expressions je nameščeno na spletno platformo Amazon AWS Kubernetes in je v lasti podjetja Genialis.
 
 \begin{figure}[htbp]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
 capbesidewidth=0.24\textwidth}}]{figure}[\FBwidth]
-{\caption{\small\bold{Genialis Expressions} is a biomedical data hub that ensures FAIR (Findable, Accessible, Interoperable and Re-usable) guiding principles for scientific data management and stewardship. It automates primary analysis (pre-processing) of the next generation sequencing data and ensures data provenance and reproducability. Genialis Expressions facilitate collaboration, data sharing, and supports integration with 3rd-party apps like Orange.}
+{\caption{\small\bold{Genialis Expressions} je spletno stičišče biomedicinskih podatkov, ki zagotavlja principe dostopnosti, interoperabilnosti in ponovne uporabe podatkov (angl. FAIR principles -- Findable, Accessible, Interoperable and Re-usable). Podpira avtomatsko primarno analizo podatkov geniskih sekvenc, hrani informacijo o izvoru podatkov in omogoča ponovljivost računskih analiz. Genialis Expressions omogoča sodelovanje uporabnikov, ki lahko podatke izmenjujejo, in podpira integracijo s poljubnimi programi kot je npr.~Orange.}
 \label{fig:genialis-expressions-frontend}}
 {\includegraphics[width=0.73\textwidth]{genialis-expressions-frontend}}
 \end{figure}
@@ -258,29 +258,29 @@ capbesidewidth=0.24\textwidth}}]{figure}[\FBwidth]
 \begin{figure}[htbp]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
 capbesidewidth=0.2\textwidth}}]{figure}[\FBwidth]
-{\caption{\small\bold{Modular software architecture of Genialis Expressions.} The frontend layer communicates with the backend via RESTful API. We provide TypeScript and Python software development kits (SDK) for integration with our proprietary frontend and 3rd-part software solutions, such as Orange (see the grey box in the top right corner). We support a plun-in architecture for analysis tools (see the brown boxes to the right). The analytics jobs run in parallel on the Kubernetes Cluster, each in its own isolated envrinment using Docker containers.}
+{\caption{\small\bold{Genialis Expressions ima modularno arhitekturo programske opreme.} Prednja plast (angl. frontend) komunicira z zaledjem (angl. backend) preko vmesnika RESTful API. Na voljo so knjižnice za razvoj povezane programske opreme v programskih jezikih TypeScript in Python, na primer za integracijo s programom Orange kot je prikazano s sivo barvo v zgornjem desnem kotu. Tudi komponente za podatkovno analizo imajo modularno zasnovo (glej rjava polja na sliki desno). Analize tečejo vzporedno v gruči računalnikov Kubernetes, vsaka v svojem izoliranem okolju v vsebnikih Docker.}
 \label{fig:genialis-expressions-software-components}}
 {\includegraphics[width=0.8\textwidth]{genialis-expressions-software-components}}
 \end{figure}
 
-The project will use the computational infrastructure of Bioinformatics Laboratory of University of Ljubljana, which includes CPU cluster (about 500 processors), NFS storage (about 500 TB), and a cluster of GPU processors (about 20 GPUs), collectively valued at about 200.000 EUR. We will require no special computational equipment besides the existing for the proposed project.
+Projekt bo uporabljal računalniško infrastrukturo Laboratorija za bioinformatiko Univerze v Ljubljani, ki vključuje računalniško gručo z računskimi procesorji CPU (približno 500 procesorjev), pomnilnik NFS (približno 500 TB) in računalniško gručo z grafičnimi procesorji GPU (približno 20 grafičnih procesorjev) v skupni vrednosti približno 200.000 EUR. Za predlagani projekt ne bomo potrebovali posebne računske opreme poleg obstoječe.
 
-\subsection{Project management}
+\subsection{Vodenje projekta}
 
-The project will join two highly compatible R\&D teams. The Bioinformatics Laboratory from University of Ljubljana will bring to the project its extensive expertise in data mining, machine learning, bioinformatics, and computational phenotyping. The project will be co-financed by Genialis, a data science and drug discovery company focused on new ways to treat disease. Blending computational biology and AI-based methods, Genialis merges and models data at the intersection of clinical and translational medicine. Genialis is trusted by biopharma and big pharma alike, to validate targets, predict biomarkers and optimally position novel drugs. Together, Genialis and its partners are bringing improved solutions to drug discovery to change people's lives.
+Projekt bo združil dve komplementarni skupini raziskovalcev iz univerze in gospodarstva. Laboratorij za bioinformatiko Univerze v Ljubljani prinaša široka strokovna znanja na področjih rudarjenja podatkov, strojnega učenja, bioinformatike in računskega fenotipiziranja. Projekt bo sofinanciralo podjetje Genialis, ki raziskuje in trži nove pristope zdravljenja bolezni, na področjih klinične in translacijske medicine. Genialis sodeluje s farmacevtskimi podjetji pri identifikaciji tarč, iskanju in razvoju biomarkerjev in pozicioniranju novih zdravil. Skupaj so razvili nove pristope za odkrivanje zdravil in zdravljenj, ki bistveno izboljšajo kakovost življenja ljudi z zapletenimi boleznimi.
 
-The project will be managed by UL (project manager). The management of the project will be organized through regular meetings of the management board, with one appointed representative from each institution, and through regular meetings of the project members. The collaboration platform will be based on GitHub and will be made available in the earliest stage of the project.
+Projekt bo vodila UL (vodja projekta). Vodenje projekta bo organizirano na rednih sejah upravnega odbora s po enim imenovanim predstavnikom iz vsake institucije in z rednimi sestanki članov projekta. Platforma za sodelovanje bo temeljila na GitHub in bo na razpolago že v zgodnejši fazi projekta.
 
-We will complete the project in three years. Fig.~\ref{fig:gantt} gives the detailed time line of the projects.
+Projekt bomo zaključili v treh letih. Slika~\ref{fig:gantt} prikazuje podrobno časovnico projekta.
 
 \begin{figure}
 \includegraphics[width=0.90\textwidth]{gantt}
-\caption{\small\bold{Project's time line}. In a nutshell, we will start with organizing the data sets. Then, we will develop a Python library for marker discovery in survival analysis. We will proceed with the design and implementation of the graphical user interface for new components of Orange data mining library. All components of the developed system will be tested in collaboration with Genialis, our partner SME. A special task is devoted to dissemination, which includes open-source software, documentation, examples, video material, scientific publications, and filing of a patent.}
+\caption{\small\bold{Časovnica projekta}. Začeli bomo z urejanjem podatkov. Nato bomo razvili Python knjižnico za odkrivanje genskih markerjev pri analizi preživetja. Nadaljevali bomo z načrtovanjem in izvedbo grafičnega uporabniškega vmesnika za nove komponente knjižnice podatkovnega rudarjenja Orange. V sodelovanju z Genialisom bomo testirali komponente na realnih problemih. Posebno pozornost bomo namenili  diseminaciji rezultatov, vključno z objavo odprtokodne programske opreme, dokumentacije, primerov uporabe, video materialov, znanstvenih objav in vložitvijo patenta.}
 \label{fig:gantt}
 \end{figure}
 
 % \clearpage
-\subsection*{References}
+\subsection*{Reference}
 
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 
