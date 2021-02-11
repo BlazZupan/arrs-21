@@ -137,7 +137,7 @@ Besides computational methods, the proposed project will also relate to existing
 The project will be organized around the following set of tasks:
 \begin{description}
 	\item[T0] \bold{Setting-up of the collaborative environment.} We will deposit all the code and documentation on GitHub\myurl{https://github.com/biolab}. The repository will store project documentation and meeting minutes, tasks management through creation and tracking of issues, Python library code, unit-test, and examples. Data files will be stored on a separate web server. Extensions of Orange\myurl{https://orangedatamining.com} will be developed as an add-on and will be stored in a separate repository on the GitHub.
-	\item[T1] \bold{Data acquisition and organization.} The project will use a number of different data sets coming from published studies and databases such as NCBI's Gene Expression Omnibus\myurl{https://www.ncbi.nlm.nih.gov/geo} and TCGA, The Cancer Genome Atlas database\myurl{https://portal.gdc.cancer.gov}. In addition, we will also create a set of synthetic data sets of varying size and complexity. The compiled data sets will be stored in our own dataset repository created in task T1.
+	\item[T1] \bold{Data acquisition and organization.} The project will use a number of different data sets coming from published studies and databases such as NCBI's Gene Expression Omnibus\myurl{https://www.ncbi.nlm.nih.gov/geo} and TCGA, The Cancer Genome Atlas database\myurl{https://portal.gdc.cancer.gov}. In addition, we will also create a set of synthetic data sets of varying size and complexity. The compiled data sets will be stored on Genialis Expressions\myurl{https://www.genialis.com/software-applications/}, an online database of gene expression and other biomedical data, provided by Genialis.
 	\item[T2] \bold{Development of data mining and bioinformatics for survival biomarker discovery.} In particular, we will develop and implement techniques for:
 	\begin{description}
 		\item[T2.1] \bold{Gene ranking and selection based on the survival function}, where we will implement standard techniques from the field, including the log rank test and the ranking based on the inference of Cox proportional hazards model. We will also include more recent and advanced modeling approaches based on random forests and deep learning, and infer gene ranking through studying the sensitivity of the models.
@@ -165,7 +165,7 @@ capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 
 \subsubsection{Research Design and Methods}
 \begin{description}
-	\item[Overview.] 
+	\item[Overview.]
 The overview of the research in the proposed project is presented in Fig.~\ref{fig:approach}. The figure shows how we will integrate the target gene expression data and clinical metadata with additional knowledge bases and other available data sets. It exposes the key scientific approaches we will address:
 \begin{enumerate}
 \item which, on their own, are the key molecular markers for survival,
@@ -198,7 +198,7 @@ capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 		\item[DS4] Simulated data sets.
 	\end{description}
 	The data from DS1 and DS2 are fragmented; datasets have to be integrated, so that the clinical trial data is aligned with a corresponding transcription data. Methodological reports on development of computational techniques, including those we have cited in the related work, would refer to data repositories but would seldom publish the reorganized data ready to be used in off-the-shelf software packages. Our project aims to break with this practice and compile a data repository with aligned clinical and transcription data sets ready for benchmarking and comparing biomarker discovery techniques.
-	
+
 	Genialis d.o.o.~already has a collection of such align datasets which comes from their existing partnerships with some major pharmaceutical companies. The data is private, but will be shared with us in the project for testing and validation purposes.
 
 	We will also construct a set of simulated datasets, where variables representing biomarkers will be placed by design. The datasets will serve for testing and benchmarking of the proposed methods.
@@ -231,7 +231,7 @@ capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 	Within the project, we will develop a set of components that will be specific to the problem in our project, but also general enough for other survival analysis tasks. We intend to develop components for survival modeling, accuracy estimation, biomarker ranking, identification of groups of markers, gene embedding, and construction of survival-based gene interaction maps. Orange includes components crucial for the proposed project but have already been developed or at least prototyped. These include access to gene annotation libraries, gene set enrichment, GO browser, and visualization tools, including t-SNE and Kaplan-Meier curves.
 
 	\item[Experimental Validation.] We will use the data sets DS1 to DS4 to experimentally validate both the computational techniques and the visual interfaces we will construct in the project. There are three aspects of validation we will assess:
-	\begin{itemize} 
+	\begin{itemize}
 		\item \bold{predictive performance}, where we will compare inferred biomarkers to those published in the literature, and compare the results of our marker discovery techniques to those already published;
 		\item \bold{interpretability}, which will be assessed with domain experts working with Genialis, a participating SME. The assessment of interpretability will be both quantitative, in terms of how well can we link identified biomarkers to known functional and pathway labels, and subjective, in terms of agreement of domain experts with the proposed result;
 		\item \bold{usability}, where we will use hands-on workshops with domain experts to assess if they can use the developed tool independently after a three-hour training.
@@ -239,6 +239,20 @@ capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 \end{description}
 
 \subsection{Available research equipment over 5.000 €}
+
+Genialis, the participating SME, will provide a web resource Genialis Expressions (see Fig.~\ref{fig:genialis-expressions-frontend} and~\ref{fig:genialis-expressions-software-components}) to aggregate, curate & analyze high-throughput sequencing data and associated clinical and experimental results. Genialis Expressions run on the AWS Kubernetes Cluster owned by Genialis.
+
+\begin{figure}
+\includegraphics[width=0.90\textwidth]{genialis-expressions-frontend}
+\caption{\bold{Genialis Expressions} is a biomedical data hub that ensures FAIR (Findable, Accessible, Interoperable and Re-usable) guiding principles for scientific data management and stewardship. It automates primary analysis (pre-processing) of the next generation sequencing data and ensures data provenance and reproducability. Genialis Expressions facilitate collaboration, data sharing, and supports integration with 3rd-party apps like Orange.}
+\label{fig:genialis-expressions-frontend}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.90\textwidth]{genialis-expressions-software-components}
+\caption{\bold{Genialis Expressions} has a modular software architecture. The frontend layer communicates with the backend via RESTful API. We provide TypeScript and Python software development kits (SDK) for integration with our proprietary frontend and 3rd-part software solutions, such as Orange (see the grey box in the top right corner). We support a plun-in architecture for analysis tools (see the brown boxes to the right). The analytics jobs run in parallel on the Kubernetes Cluster, each in its own isolated envrinment using Docker containers.}
+\label{fig:genialis-expressions-software-components}
+\end{figure}
 
 The project will use the computational infrastructure of Bioinformatics Laboratory of University of Ljubljana, which includes CPU cluster (about 500 processors), NFS storage (about 500 TB), and a cluster of GPU processors (about 20 GPUs), collectively valued at about 200.000 EUR. We will require no special computational equipment besides the existing for the proposed project.
 
