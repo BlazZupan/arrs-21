@@ -60,7 +60,7 @@
 \begin{figure}
 \includegraphics[width=0.48\textwidth]{hsa-mir-149}\hfill
 \includegraphics[width=0.48\textwidth]{hsa-mir-496}
-\caption{\bold{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival.} The survival function is substantially higher for a group of patients with highly expressed microRNA hsa-mir-149 (left panel). The difference is not so evident for microRNA hsa-mir-496 (right panel). We could say that hsa-mir-149 is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes and RNA molecules according to the degree of separation between survival signatures given gene expression.}
+\caption{\small\bold{An example of a Kaplan-Meier plot for two gene expression-dependent conditions associated with patient survival.} The survival function is substantially higher for a group of patients with highly expressed microRNA hsa-mir-149 (left panel). The difference is not so evident for microRNA hsa-mir-496 (right panel). We could say that hsa-mir-149 is hence a better biomarker for survival. In biomarker discovery, one of the tasks is to rank genes and RNA molecules according to the degree of separation between survival signatures given gene expression.}
 \label{fig:km-marker}
 \end{figure}
 
@@ -93,7 +93,7 @@
 
 \begin{figure}[htbp]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
-capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 {\caption{\small\bold{Most graphical components -- widgets -- in Orange are interactive.} We here show the content of several widgets from the workflow in Figure~\ref{fig:orange-workflow}. The user can, for instance, choose a subset of data points from the {\em t-SNE} visualization (data points with a yellow outline on the top right of the visualization), or data corresponding to a specific bar in the {\em Box Plot}, or a set of genes associated with a selected term from the {\em GO Browser}. In the {\em Differential Expression} widget, we can choose a set of differentially expressed genes in the tails of the gene score distribution plot. Most widgets contain both a control and a visualization part. The project will reuse some of the widgets from this visualization, including the t-SNE widget, and will develop specialized highly-interactive widgets for survival analysis and biomarker discovery.}
 \label{fig:orange-interactivity}}
 {\includegraphics[width=0.6\textwidth]{orange-interactivity}}
@@ -157,7 +157,7 @@ The project will be organized around the following set of tasks:
 
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
-capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 {\caption{\small\bold{A prototype of Orange's widget with automatic annotation of point-based visualisation.} On the input, this component considers gene expression profiles of single cells and their associated embedding (e.g., t-SNE coordinates), and a list of marker genes for each candidate cell-type. In scope of the proposed project, we will use a similar approach to design a widget that would annotate and thus explain the space of potential markers.}
 \label{fig:annotation}}
 {\includegraphics[width=0.6\textwidth]{annotation}}
@@ -176,7 +176,7 @@ While all of the above are clearly the issues that could be individually and man
 
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
-capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+capbesidewidth=0.37\textwidth}}]{figure}[\FBwidth]
 {\caption{\small\bold{Knowledge-based analysis to biomarker discovery.} We aim to combine our target data set with transcription and survival data from clinical trials with other available data sets and knowledge bases to gain in speed, accuracy and interpretation of results. Substantial part of our project deals with exploratory data interfaces, which combine visualization of data, identified biomarkers and models. Together, computational approaches for biomarker discovery and visualization approaches for making these findings explicit and placing them in the context of entire search space (e.g., {\em marker maps}) will assist us in explainable, semi-automatic discovery process. The methods will provide hypotheses to be evaluated by a domain expert, and they will be able to work with the assumptions and curated public knowledge rather than machine-generated black-box decisions.}
 \label{fig:approach}}
 {\includegraphics[width=0.6\textwidth]{approach}}
@@ -240,18 +240,22 @@ capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 
 \subsection{Available research equipment over 5.000 €}
 
-Genialis, the participating SME, will provide a web resource Genialis Expressions (see Fig.~\ref{fig:genialis-expressions-frontend} and~\ref{fig:genialis-expressions-software-components}) to aggregate, curate & analyze high-throughput sequencing data and associated clinical and experimental results. Genialis Expressions run on the AWS Kubernetes Cluster owned by Genialis.
+Genialis, the participating SME, will provide a web resource Genialis Expressions (see Fig.~\ref{fig:genialis-expressions-frontend} and~\ref{fig:genialis-expressions-software-components}) to aggregate, curate, and analyze high-throughput sequencing data and associated clinical and experimental results. Genialis Expressions run on the AWS Kubernetes Cluster owned by Genialis.
 
-\begin{figure}
-\includegraphics[width=0.90\textwidth]{genialis-expressions-frontend}
-\caption{\bold{Genialis Expressions} is a biomedical data hub that ensures FAIR (Findable, Accessible, Interoperable and Re-usable) guiding principles for scientific data management and stewardship. It automates primary analysis (pre-processing) of the next generation sequencing data and ensures data provenance and reproducability. Genialis Expressions facilitate collaboration, data sharing, and supports integration with 3rd-party apps like Orange.}
-\label{fig:genialis-expressions-frontend}
+\begin{figure}[htbp]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
+capbesidewidth=0.24\textwidth}}]{figure}[\FBwidth]
+{\caption{\small\bold{Genialis Expressions} is a biomedical data hub that ensures FAIR (Findable, Accessible, Interoperable and Re-usable) guiding principles for scientific data management and stewardship. It automates primary analysis (pre-processing) of the next generation sequencing data and ensures data provenance and reproducability. Genialis Expressions facilitate collaboration, data sharing, and supports integration with 3rd-party apps like Orange.}
+\label{fig:genialis-expressions-frontend}}
+{\includegraphics[width=0.73\textwidth]{genialis-expressions-frontend}}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=0.90\textwidth]{genialis-expressions-software-components}
-\caption{\bold{Genialis Expressions} has a modular software architecture. The frontend layer communicates with the backend via RESTful API. We provide TypeScript and Python software development kits (SDK) for integration with our proprietary frontend and 3rd-part software solutions, such as Orange (see the grey box in the top right corner). We support a plun-in architecture for analysis tools (see the brown boxes to the right). The analytics jobs run in parallel on the Kubernetes Cluster, each in its own isolated envrinment using Docker containers.}
-\label{fig:genialis-expressions-software-components}
+\begin{figure}[htbp]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},
+capbesidewidth=0.2\textwidth}}]{figure}[\FBwidth]
+{\caption{\small\bold{Modular software architecture of Genialis Expressions.} The frontend layer communicates with the backend via RESTful API. We provide TypeScript and Python software development kits (SDK) for integration with our proprietary frontend and 3rd-part software solutions, such as Orange (see the grey box in the top right corner). We support a plun-in architecture for analysis tools (see the brown boxes to the right). The analytics jobs run in parallel on the Kubernetes Cluster, each in its own isolated envrinment using Docker containers.}
+\label{fig:genialis-expressions-software-components}}
+{\includegraphics[width=0.8\textwidth]{genialis-expressions-software-components}}
 \end{figure}
 
 The project will use the computational infrastructure of Bioinformatics Laboratory of University of Ljubljana, which includes CPU cluster (about 500 processors), NFS storage (about 500 TB), and a cluster of GPU processors (about 20 GPUs), collectively valued at about 200.000 EUR. We will require no special computational equipment besides the existing for the proposed project.
@@ -266,16 +270,11 @@ We will complete the project in three years. Fig.~\ref{fig:gantt} gives the deta
 
 \begin{figure}
 \includegraphics[width=0.90\textwidth]{gantt}
-\caption{\bold{Project's time line}. In a nutshell, we will start with organizing the data sets. Then, we will develop a Python library for marker discovery in survival analysis. We will proceed with the design and implementation of the graphical user interface for new components of Orange data mining library. All components of the developed system will be tested in collaboration with Genialis, our partner SME. A special task is devoted to dissemination, which includes open-source software, documentation, examples, video material, scientific publications, and filing of a patent.}
+\caption{\small\bold{Project's time line}. In a nutshell, we will start with organizing the data sets. Then, we will develop a Python library for marker discovery in survival analysis. We will proceed with the design and implementation of the graphical user interface for new components of Orange data mining library. All components of the developed system will be tested in collaboration with Genialis, our partner SME. A special task is devoted to dissemination, which includes open-source software, documentation, examples, video material, scientific publications, and filing of a patent.}
 \label{fig:gantt}
 \end{figure}
 
-
-
-% Detailed implementation plan and timetable
-% gantt
-% risks and remedies
-\clearpage
+% \clearpage
 \subsection*{References}
 
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
