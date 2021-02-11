@@ -18,7 +18,7 @@ biomarkerji, analiza preživetja, genski izrazi, interaktivne vizualizacije, raz
 
 #### Ostale odprte zadeve
 
-##### Kratka predstavitev vodje raziskovalnega projekta - življenjepis (Short Curriculum Vitae of the project leader)
+##### 21-Kratka predstavitev vodje raziskovalnega projekta - življenjepis (Short Curriculum Vitae of the project leader)
 V alineah izpostaviti: izobrazbo, akademski ter znanstvenoraziskovalni naziv, zaposlitve, vodstvene funkcije in sposobnosti, sposobnosti vodje projekta za spodbujanje mladih raziskovalcev k vrhunskemu raziskovalnemu delu, delo v strokovnih komisijah doma in v tujini, nagrade ter jedrnat opis trenutnih oziroma zadnjih raziskovalnih projektov. Obseg: največ 12.000 znakov vključno s presledki (približno tri strani, velikosti pisave 11)
 
 ##### Dva do pet najpomembnejših dosežkov vodje raziskovalnega projekta in ostalih članov projektne skupine na področju gospodarstva, družbenih ali kulturnih dejavnosti, povezanih z raziskovalnim področjem prijave in vsebino projekta v zadnjih desetih letih (2011 - datum zaključka javnega razpisa). (Two to five most important achievements of the project leader and other project team members linked to the research field and the content of the research project in the area of economic, social and cultural activities in the last ten years (2011 - Conclusion of the public call).
@@ -49,10 +49,10 @@ Description must include:
 
 ##### Pomen za razvoj znanosti oziroma stroke (Relevance to the development of science or a scientific field)
 
-##### Neposredni pomen projekta za gospodarstvo in družbo (For Applied Project and Postdoctoral Applied Project only: Direct impact of the project for the economy and society
+##### 29.2 Neposredni pomen projekta za gospodarstvo in družbo (For Applied Project and Postdoctoral Applied Project only: Direct impact of the project for the economy and society
 Genialis!!!
 
-##### Posredni pomen projekta za družbo (For Applied Project and Postdoctoral Applied Project only: Indirect impact of the project for society)
+##### 29.3 Posredni pomen projekta za družbo (For Applied Project and Postdoctoral Applied Project only: Indirect impact of the project for society)
 Genialis!!!
 
 
