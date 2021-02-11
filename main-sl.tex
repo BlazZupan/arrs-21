@@ -9,6 +9,8 @@
 \usepackage{multicol}
 \usepackage{etoolbox}
 
+\usepackage[slovene]{babel}
+
 \setstretch{1.1}
 % \usepackage[document]{ragged2e}
 \setcounter{section}{27}  % this is a section 27 of the proposal form
@@ -24,7 +26,7 @@
 \captionsetup[figure]{labelfont={bf},name={Fig.},labelsep=period}
 
 \usepackage{fontspec}
-\setmainfont{Calibri}
+\setmainfont{Carlito}
 
 % \usepackage{fontspec}
 % \setmainfont[Path=/System/Library/Fonts/,
@@ -37,21 +39,21 @@
 
 \begin{document}
 
-\title{\Large Computational Toolbox for Discovery of Prognostic Markers in Survival Analysis from Gene Expression Data: Description of the Research Project}
+\title{\Large Računska orodja za odkrivanje prognostičnih bioloških označevalcev iz podatkov o genskih izrazih: opis raziskovalnega projekta}
 \author{}
 \date{}
 \maketitle
 \vspace*{-1cm}
 
-\bold{We propose a project to design and develop an interactive, visualization-based exploratory analysis toolbox to assist in finding molecular prognostic biomarkers from high-throughput molecular data and survival data obtained in clinical trials.} The project will devise computational and machine learning methods to search for biomarkers, encapsulate them within interactive components with a graphical user interface, and provide visual programming to stitch these components into data analysis pipelines. The constructed methods and toolbox will support collaborations between the data scientists and domain experts---physicians, biomedical or pharma researchers---to sift through the molecular cell-response data of thousands of genes to find those that correlate most with survival. The proposed tool will access existing models, ontologies, and knowledge bases to speed-up the interpretation and provide semi-automatic explanations of results.
+\bold{Predlagamo projekt za oblikovanje in razvoj interaktivne zbirke orodij za pomoč pri iskanju molekularnih prognostičnih bioloških označevalcev (biomarkerjev) iz molekularnih podatkov in podatkov preživetja, pridobljenih v kliničnih poskusih.} V projektu bomo zasnovali računske metode in metode strojnega učenja za iskanje biomarkerjev, jih vključil v interaktivne komponente z grafičnim uporabniškim vmesnikom in zasnovali vizualno programiranje za povezavo teh komponent v cevovode. Razvite metode in zbirka orodij bodo podpirale sodelovanje med podatkovnimi znanstveniki in strokovnjaki s področja razvoja bioloških označevalcev - zdravniki, biomedicinski ali farmacevtski raziskovalci. Z njimi bo možno preiskati podatke o molekularnih odzivih tisočih genov, da bi našli tiste, ki najbolj korelirajo s preživetjem. Predlagano orodje bo dostopalo do obstoječih modelov, ontologij in podatkovnih baz, da bi tako pospešilo interpretacijo in ponudilo polavtomatske razlage rezultatov.
 
-\bold{This is an applied project where we are teaming up with Genialis, a data science company specializing in computational support for precision medicine.} Genialis is currently in the process of registering with the FDA (US Food and Drug Administration) a first-ever machine learning model that utilizes transcription data to predict cancer patients' response to treatment. To remain at the cutting edge of biomarker research, Genialis needs methods, tools, and visualizations to speed-up the discovery and improve communication of data analysis results to customers and regulatory agencies. On the other hand, the project will allow us, the proposing institution, to further advance our research into interactive visualizations and machine learning, and apply our new approaches to the challenging field of biomarker discovery.
+\bold{To je aplikativni projekt, pri katerem se povezujemo z Genialisom, specializiranim podjetjem za podatkovno znanost na področju k posamezniku usmerjene medicine (ang.~{\em precision medicine}).} Genialis je trenutno v postopku registracije pri FDA (Ameriška uprava za hrano in zdravila) prvega modela strojnega učenja, ki za napovedovanje odziva na zdravljenje bolnikov z rakom uporablja podatke o transkripciji. Genialis potrebuje metode, orodja in vizualizacije za pospešitev raziskav, da bo ostalo v vrhu raziskav biomarkerjev in izboljšalo komunikacijo rezultatov s strankami in regulatornimi agencijam. Po drugi strani pa bo projekt predlagatelju omogočil nadaljevanje naših raziskav interaktivnih vizualizacij in strojnega učenja ter uporabo naših novih pristopov k zahtevnemu področju odkrivanja biomarkerjev.
 
-\subsection{Scientific background, problem identification and objectives of the proposed research}
+\subsection{Znanstvena izhodišča ter predstavitev problema in ciljev raziskav}
 
-\subsubsection*{Scientific Background}
+\subsubsection*{Znanstvena izhodišča}
 
-\bold{The project will contribute new methods and practical data exploration approaches to the field of survival analysis, and study how many covariates (genes with their expression) jointly affect survival.} Survival analysis is a set of statistical methods aimed at determining the life expectancy of the investigated population. Survival analysis studies the expected duration of time until an event, say, a cancer relapse after chemotherapy or a recurrence of disease~\cite{pazdur2008endpoints}. Survival models, including the most famous, the proportional hazards model, relate the time until the event to one or more covariates. In biomedicine, the covariates with a significant impact on survival are potential {\em markers}, a characteristic of a biological system we can measure objectively and use as an indicator of the system's state. For example, in cancer, markers may differentiate between patients that respond to the treatment and those who do not.
+\bold{Projekt bo prispeval nove metode in praktične pristope k raziskovanju podatkov na področju analize preživetja in preučeval, koliko spremenljivk (genov s svojim izražanjem) skupaj vpliva na preživetje.} Analiza preživetja je sklop statističnih metod, katerih namen je določiti pričakovano življenjsko dobo preiskovane populacije. Analiza preživetja proučuje pričakovano trajanje časa do nekega dogodka, recimo ponovne pojavitve raka po kemoterapiji~\cite{pazdur2008endpoints}.Modeli preživetja, vključno z najbolj znanim modelom razmerja tveganja (ang.~{\em hazard ratio}), se nanašajo na čas do dogodka za eno ali več kovariant. V biomedicini so spremenljivke, ki pomembno vplivajo na preživetje, potencialni označevalci, značilnost biološkega sistema, ki ga lahko merimo objektivno in uporabljamo kot kazalnik stanja sistema. Na primer, pri raku lahko označevalci razlikujejo med bolniki, ki se odzivajo na zdravljenje, in tiste, ki se ne.
 
 \bold{Based on markers, we can predict the success of treatment and choose the right therapy for an individual patient. Identification of good markers is thus crucial to the development of personalized medicine.} Because improving survival benefits the patient directly, it is essential to understand how participants respond to various forms of treatment. The treatment should thus be selected based on the patient's state and characteristics defined through a set of markers. Markers may be clinical, related to the patient's symptoms, or biological, related to some measurements on the molecular level, like concentration of a specific protein or expression of a particular gene or a set of genes. Markers may refer to a single measurement or to a group of measurements possibly related through a prognostic model or a network~\cite{Sonawane2019}.
 
